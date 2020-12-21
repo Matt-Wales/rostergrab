@@ -13,7 +13,7 @@ const PlayerRolling = ({ rolling }) => {
     const svgRef = useRef();
 
     useEffect(() => {
-        const width = 400;
+        const width = 350;
         const height = 300;
 
         const svg = select(svgRef.current);
@@ -75,7 +75,7 @@ const PlayerRolling = ({ rolling }) => {
         svg
             .append('text')
             .attr('transform', 'rotate(-90)')
-            .attr('y', -65)
+            .attr('y', -53)
             .attr('x', 0 - ((height * 0.915) / 2))
             .attr('dy', '1em')
             .style('text-anchor', 'middle')
@@ -94,7 +94,7 @@ const PlayerRolling = ({ rolling }) => {
         svg
             .append('text')
             .attr('transform', 'rotate(90)')
-            .attr('y', (-width - 65))
+            .attr('y', (-width - 57))
             .attr('x', (height / 2))
             .attr('dy', '1em')
             .style('text-anchor', 'middle')
@@ -105,7 +105,7 @@ const PlayerRolling = ({ rolling }) => {
     return (
         (rolling.length) ?
         <div className='graph-container'>
-            <svg width={400} height={275} ref={svgRef}>
+            <svg width={350} height={275} ref={svgRef}>
                 <g className='y-axis1' />
                 <g className='x-axis' />
                 <g className='y-axis2' />
