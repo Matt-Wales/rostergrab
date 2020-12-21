@@ -19,10 +19,10 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path='/' exact component={TeamsPage} />
-        <Route path='/team/:id' exact component={RosterPage} />
-        <Route path="/player/:id" exact component={PlayerDetailPage} />
-        <Route path="/pitcher/:id" exact component={PitcherDetailPage} />
+        <Route path={process.env.PUBLIC_URL + '/'} exact component={TeamsPage} />
+        <Route path={process.env.PUBLIC_URL + '/team/:id'} exact component={RosterPage} />
+        <Route path={process.env.PUBLIC_URL + '/player/:id'} exact component={PlayerDetailPage} />
+        <Route path={process.env.PUBLIC_URL + '/pitcher/:id'} exact component={PitcherDetailPage} />
         <Route component={NoMatchRoute} />
       </Switch>
     </Router>
