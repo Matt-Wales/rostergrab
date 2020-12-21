@@ -28,7 +28,7 @@ const StrikeZoneLine = styled.foreignObject`
 
 const Tooltip = ({ x, y, info }) => (
     <TooltipBox x={(info.pfx_x > 0) ? (x + 10) : (x - 95)} 
-    y={(info.plate_z < 0.5) ? (y - 52) : (y + 10)} width={85} height={42}>
+    y={(info.plate_z < 0.5 || info.pfx_z < -0.8) ? (y - 60) : (y + 10)} width={85} height={50}>
         <div className='tooltip-text-location'>
             <strong>{info.pitch_name}</strong>
         </div>

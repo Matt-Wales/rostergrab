@@ -57,7 +57,7 @@ const PlayerDetailPage = ({ match }) => {
     }, [id])
 
     useEffect(() => {
-        axios.get(`https://baseballsavant.mlb.com/player-services/roll?playerId=${id}&count=50&type=xwoba_roll&year=2020`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://baseballsavant.mlb.com/player-services/roll?playerId=${id}&count=50&type=xwoba_roll&year=2020`)
             .then(res => {
                 if (res.data == null) {
                     setRolling([]);
@@ -70,7 +70,7 @@ const PlayerDetailPage = ({ match }) => {
     }, [id])
 
     useEffect(() => {
-        axios.get(`https://baseballsavant.mlb.com/player/pitch_types?player_id=${id}&season=2020`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://baseballsavant.mlb.com/player/pitch_types?player_id=${id}&season=2020`)
             .then(res => {
                 setPitchTypes(res.data)
             })

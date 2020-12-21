@@ -27,7 +27,7 @@ const StrikeZoneLine = styled.foreignObject`
 `;
 
 const Tooltip = ({ x, y, info }) => (
-    <TooltipBox x={(info.pfx_x > 0) ? (x + 10) : (x - 140)} y={y + 10} width={130} height={80}>
+    <TooltipBox x={(info.pfx_x > 0) ? (x + 10) : (x - 140)} y={(info.pfx_z < -0.8) ? (y - 100) : (y + 10)} width={130} height={90}>
         <div className='tooltip-text-movement'>
             <strong>{info.pitch_name}
             <br />{(-info.pfx_x * 12).toFixed(1)} inches <FontAwesomeIcon icon="arrows-alt-h" />
