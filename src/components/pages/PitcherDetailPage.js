@@ -54,7 +54,7 @@ const PitcherDetailPage = ({ match }) => {
     }, [id])
 
     useEffect(() => {
-        axios.get(`https://baseballsavant.mlb.com/player/pitch_types?player_id=${id}&player_type=pitcher&season=2020`)
+        axios.get(`https://rostergrab.netlify.app/https://baseballsavant.mlb.com/player/pitch_types?player_id=${id}&player_type=pitcher&season=2020`)
             .then(res => {
                 setPitchTypes(res.data)
             })
