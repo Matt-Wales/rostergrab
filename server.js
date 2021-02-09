@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req,res) => {
-    res.send('Please work');
-})
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
 
 // Get a player's bio from MLB
 app.get('/api/bio/:id', async (req, res) => {
