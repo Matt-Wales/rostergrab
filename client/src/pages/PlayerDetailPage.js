@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import Axios from 'axios'
 
-import BaseURL from '../apis/BaseURL'
 import PlayerDetailHeader from '../components/PlayerDetailHeader'
 import PlayerDetailBody from '../components/PlayerDetailBody'
 
@@ -29,7 +29,7 @@ const PlayerDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchPlayers = async () => {
-            const result = await BaseURL.get(`/bio/${id}`)
+            const result = await Axios.get(`/api/bio/${id}`)
 
             setDetails(result.data.player)
             setPosition(result.data.player.primaryPosition)
@@ -40,7 +40,7 @@ const PlayerDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchSplits = async () => {
-            const result = await BaseURL.get(`/hitter/${id}`)
+            const result = await Axios.get(`/api/hitter/${id}`)
 
             if (result.data.splits.splits.length < 2) {
                 setIsEmpty(true);
@@ -57,7 +57,7 @@ const PlayerDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchRolling = async () => {
-            const result = await BaseURL.get(`/rolling/${id}`)
+            const result = await Axios.get(`/api/rolling/${id}`)
 
             if (result.data.rolling === null) {
                 setIsEmpty(true);
@@ -72,7 +72,7 @@ const PlayerDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchPitches = async () => {
-            const result = await BaseURL.get(`/pitch_types/hitter/${id}`)
+            const result = await Axios.get(`/api/pitch_types/hitter/${id}`)
 
             setPitchTypes(result.data.pitches)
 
