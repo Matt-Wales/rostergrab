@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
-import BaseURL from '../apis/BaseURL'
 import PitcherDetailHeader from '../components/PitcherDetailHeader'
 import PitcherDetailBody from '../components/PitcherDetailBody'
 
@@ -38,7 +37,7 @@ const PitcherDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchSplits = async () => {
-            const result = await BaseURL.get(`/pitcher/${id}`)
+            const result = await Axios.get(`/pitcher/${id}`)
 
             if (result.data.splits.splits.length < 2) {
                 setIsEmpty(true);
@@ -55,7 +54,7 @@ const PitcherDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchPitches = async () => {
-            const result = await BaseURL.get(`/pitch_types/pitcher/${id}`)
+            const result = await Axios.get(`/pitch_types/pitcher/${id}`)
 
             setPitchTypes(result.data.pitches)
 
