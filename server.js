@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req,res) => {
+    res.send('Please work');
+})
+
 // Get a player's bio from MLB
 app.get('/api/bio/:id', async (req, res) => {
 
