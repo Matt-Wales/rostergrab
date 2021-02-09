@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const axios = require('axios');
 
@@ -10,10 +9,6 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
-
-    // app.use('/', (req, res) => {
-    //     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-    // });
 }
 
 // Get a player's bio from MLB

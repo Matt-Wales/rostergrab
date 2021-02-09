@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import Axios from 'axios'
 
 import BaseURL from '../apis/BaseURL'
 import PitcherDetailHeader from '../components/PitcherDetailHeader'
@@ -27,7 +28,7 @@ const PitcherDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchBio = async () => {
-            const result = await BaseURL.get(`/bio/${id}`)
+            const result = await Axios.get(`/api/bio/${id}`)
 
             setDetails(result.data.player)
             setThrows(result.data.player.pitchHand)
