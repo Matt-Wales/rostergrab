@@ -37,7 +37,7 @@ const PitcherDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchSplits = async () => {
-            const result = await Axios.get(`/pitcher/${id}`)
+            const result = await Axios.get(`/api/pitcher/${id}`)
 
             if (result.data.splits.splits.length < 2) {
                 setIsEmpty(true);
@@ -54,7 +54,7 @@ const PitcherDetailPage = ({ match }) => {
 
     useEffect(() => {
         const fetchPitches = async () => {
-            const result = await Axios.get(`/pitch_types/pitcher/${id}`)
+            const result = await Axios.get(`/api/pitch_types/pitcher/${id}`)
 
             setPitchTypes(result.data.pitches)
 
