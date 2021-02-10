@@ -1,4 +1,4 @@
-# <a href="https://rostergrab.netlify.app">MLB RosterGrab</a>
+# <a href="https://rostergrab.herokuapp.com/">MLB RosterGrab</a>
 ![RosterGrab demo GIF](https://i.imgur.com/0WxEZeV.gif)
 
 ### What is RosterGrab?
