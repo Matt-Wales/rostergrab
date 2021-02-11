@@ -110,7 +110,7 @@ const PlayerRolling = ({ rolling }) => {
     }, [baData, dateData])
 
     return (
-        (rolling.length) ?
+        (rolling.length >= 10) ?
             <div id='rolling' style={{
                 height: '100%', width: '100%', pointerEvents: 'none',
                 touchAction: 'none', position: 'relative', display: 'inline'

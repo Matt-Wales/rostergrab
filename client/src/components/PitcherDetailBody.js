@@ -178,7 +178,7 @@ const PitcherDetailBody = ({ isEmpty, vsALL, vsLHH, vsRHH, pitchTypes }) => {
                             2020 Average Pitch Movement and Average Location
                         </div>
                         <div className='graph-subheading'>
-                            Both graphs are from the pitcher's perspective. Hover on a pitch for details (tap if you're on a phone or tablet).
+                            Both graphs are from the pitcher's perspective. Hover on a pitch for details (double-tap if you're on a phone or tablet).
                         </div>
                     </div>
                 </section>
